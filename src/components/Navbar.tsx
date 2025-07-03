@@ -16,14 +16,15 @@ function NavBar() {
             </div>
             <div className='flex gap-7 items-center'>
                 <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn btn-outline justify-between w-48 font-normal">
+                <div tabIndex={0} role="button" className="btn btn-outline hover: border-1 border-black justify-between w-48 font-normal">
                     <a className='flex flex-row gap-2 whitespace-nowrap items-center font-semibold'>
                         <Users size={18} />
-                        {selectedTeam}                    
+                        {selectedTeam}                      
                     </a>
                     <ChevronDown className='' size={16} strokeWidth={3}/>
                 </div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-2">
+                    <li className='mb-1 text-gray-600'>Select the team</li>
                     {teams.map((team) => (
                     <li key={team} onClick={() => setSelectedTeam(team)}>
                         <a className='font-semibold'>
