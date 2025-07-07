@@ -11,19 +11,19 @@ function NavBar() {
     return (
         <div className='flex flex-row justify-between mx-4 bg-white border-b border-gray-300 py-7 px-6'>
             <div>
-            <h1 className='text-3xl font-bold text-gray-900'>Product Owner Dashboard</h1>
-            <p className='text-gray-600'>Gerencie demandas, projetos e roadmaps</p>
+                <h1 className='text-3xl font-bold text-gray-900'>Product Owner Dashboard</h1>
+                <p className='text-gray-600'>Gerencie demandas, projetos e roadmaps</p>
             </div>
             <div className='flex gap-7 items-center'>
                 <label className='swap swap-rotate'>
                     <input type="checkbox" />
-                    <Sun className='swap-off fill-current' size={20} />
-                    <Moon className='swap-on fill-current' size={20} />
+                    <Sun className='swap-off fill-current' size={20} strokeWidth={1}/>
+                    <Moon className='swap-on fill-current' size={20} strokeWidth={1}/>
                 </label>
                 <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn btn-outline hover: border-1 border-black justify-between w-48 font-normal">
+                <div tabIndex={0} role="button" className="btn btn-outline hover:bg-gray-100 border-1 border-black justify-between w-48 font-normal">
                     <a className='flex flex-row gap-2 whitespace-nowrap items-center font-semibold'>
-                        <Users size={18} />
+                        <Users size={18} strokeWidth={1}/>
                         {selectedTeam}                      
                     </a>
                     <ChevronDown className='' size={16} strokeWidth={3}/>
@@ -32,8 +32,8 @@ function NavBar() {
                     <li className='mb-1 text-gray-600'>Select the team</li>
                     {teams.map((team) => (
                     <li key={team} onClick={() => setSelectedTeam(team)}>
-                        <a className='font-semibold'>
-                        <Users size={18} />
+                        <a className=''>
+                        <Users size={18} strokeWidth={1}/>
                         {team}
                         </a>
                     </li>
