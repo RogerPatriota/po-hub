@@ -1,0 +1,18 @@
+.react-day-picker {
+    .rdp-range_start .rdp-day_button {
+        border-top-left-radius: 2px;
+        color: #ffffff;
+        background-color: #2907eb !important; 
+    }
+    .rdp-range_end .rdp-day_button {
+        border-top-right-radius: 2px;
+        color: #ffffff;
+        background-color: #2907eb !important; 
+    }
+    .rdp-selected {  
+        .rdp-day_button {
+            color: #ffffff; 
+            background-color: #6482e2;
+        } 
+    }    
+}
