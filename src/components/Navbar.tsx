@@ -2,11 +2,17 @@
 
 import React, { useState } from 'react';
 import { Plus, Users, ChevronDown, Sun, Moon } from 'lucide-react';
+import Modal from './Modal';
 
 function NavBar() {
 
     const [selectedTeam, setSelectedTeam] = useState('Select the team');
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const teams = ['Data Automation', 'Hermes', 'Apollo'];
+
+    const handleModal = () => {
+        setIsModalOpen(true);
+    }
 
     return (
         <div className='flex flex-row justify-between mx-4 bg-white border-b border-gray-300 py-7 px-6'>
@@ -14,7 +20,7 @@ function NavBar() {
                 <h1 className='text-3xl font-bold text-gray-900'>Product Owner Dashboard</h1>
                 <p className='text-gray-600'>Gerencie demandas, projetos e roadmaps</p>
             </div>
-            <div className='flex gap-7 items-center'>
+            <div className='flex gap-6 items-center'>
                 <label className='swap swap-rotate'>
                     <input type="checkbox" />
                     <Sun className='swap-off fill-current' size={20} strokeWidth={1}/>
@@ -41,10 +47,12 @@ function NavBar() {
                 </ul>
                 </div>
                 
-                <button type="button" className="flex items-center gap-2 rounded-2xl bg-black text-white px-6 py-3.5 hover:bg-gray-900 transition-colors whitespace-nowrap">
+                <button type="button" onClick={handleModal}
+                className="flex items-center gap-2 rounded-2xl bg-black text-white px-7 py-3.5 hover:bg-gray-900 transition-colors whitespace-nowrap">
                     <Plus size={16} />
                     Nova Demanda
                 </button>
+                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
       </div>
     )
