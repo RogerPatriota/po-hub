@@ -20,7 +20,7 @@ function NavBar() {
                 <h1 className='text-3xl font-bold text-gray-900'>Product Owner Dashboard</h1>
                 <p className='text-gray-600'>Gerencie demandas, projetos e roadmaps</p>
             </div>
-            <div className='flex gap-6 items-center'>
+            <div className='flex gap-5 items-center'>
                 <label className='swap swap-rotate'>
                     <input type="checkbox" />
                     <Sun className='swap-off fill-current' size={20} strokeWidth={1}/>

@@ -51,9 +51,9 @@ function GeneralVision() {
 
       <div className='mb-5 flex justify-end join '>
           <button popoverTarget="rdp-popover" className="btn font-semibold rounded-l border-y border-l border-gray-300" style={{ anchorName: "--rdp" } as React.CSSProperties}>
-          <Calendar size={20} strokeWidth={1}/>
-          {date ? dateInput : "Pick a date"}
-        </button>
+            <Calendar size={20} strokeWidth={1}/>
+            {date ? dateInput : "Pick a date"}
+          </button>
         <div popover="auto" id="rdp-popover" className="dropdown dropdown-left input-border" style={{ positionAnchor: "--rdp" } as React.CSSProperties}>
           <DayPicker className="react-day-picker text-black" mode="range" selected={date} onSelect={handleDateChange} />
         </div>
@@ -80,7 +80,7 @@ function GeneralVision() {
             <DataCard title="Demandas Concluídas" value="2" icon={<CheckCheck size={20} color='green' />} color="text-green-600" />
             <DataCard title="Em desenvolvimento" value="2" icon={<Clock3 size={20} color='blue' />} color="text-blue-600" />
             <DataCard title="Backlog" value="2" icon={<CircleAlert size={20} />} />
-        </div>
+      </div>
     </div>
   );
 }
