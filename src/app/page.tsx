@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-
 import Navbar from '@/components/Navbar';
 import GeneralVision from '@/components/GeneralVision';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
 export default function Home() {
+    const queryClient = new QueryClient()
+
     const tabs = [
         { name: 'Visão Geral', component: <GeneralVision /> },
         { name: 'Demandas', component: 'Demandas' },
@@ -17,7 +19,7 @@ export default function Home() {
     const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
         <Navbar />
 
         <div className="flex flex-col justify-center my-6 mx-14 gap-10">
@@ -38,7 +40,7 @@ export default function Home() {
             </div>
             {tabs[activeTab].component}
         </div>
-    </div>
+    </QueryClientProvider>
   );
 }
     

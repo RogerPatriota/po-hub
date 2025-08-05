@@ -10,8 +10,8 @@ type ModalProps = {
 
 function Modal({ isOpen, onClose }: ModalProps) {
     const modalRef = useRef<HTMLDialogElement>(null);
-    const [showLink, setShowLink] = useState<boolean>(false);
-    const [ linkCopied, setLinkCopied] = useState<boolean>(false)
+    const [showLink, setShowLink] = useState<boolean>(true);
+    const [linkCopied, setLinkCopied] = useState<boolean>(false)
     const formsLink: string = 'https://forms.office.com/r/test-forms-ms'
 
     useEffect(() => {
@@ -49,17 +49,17 @@ function Modal({ isOpen, onClose }: ModalProps) {
         <div>
             <dialog ref={modalRef} id="my_modal_4" className="modal overflow-hidden">
                 {showLink ? (
-                    <div className="modal-box max-w-5xl h-[60vh] flex flex-col gap-8 pb-15">
-                        <h2 className="m-2 text-zinc-700 font-semibold text-2xl">Link para o formualario de Novos Projetos!</h2>
+                    <div className="modal-box max-w-5xl h-[60vh] flex flex-col gap-8 pb-15 overflow-hidden">
+                        <h2 className="m-2 text-zinc-700 font-semibold text-2xl">Link para o formualario de Novos Projetos</h2>
                         <p className="text-zinc-700 text-center mt-10">Utilize o link a baixa para coletar informações sobre novos porjetos! Encaminhe para os solicitantes e volte na plataforma para continuar o registro do projeto</p>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center mt-7">
                             <span className="text-base p-2 px-5 bg-base-200 rounded-l border border-zinc-300">{formsLink}</span>
                             <div onClick={() => {copyToClipboard(formsLink)}} className="cursor-pointer flex gap-2 p-2 items-center text-zinc-500 bg-base-300 rounded-r border-1 border-zinc-300 hover:bg-zinc-300 hover:border-zinc-400">
                                 {linkCopied ? <CheckCheck size={19}/> : <Copy size={19} />}
                                 Copiar
                             </div>
                         </div>
-                        {linkCopied && <p className="text-green-500 font-semibold text-center">Link copiado com sucesso!</p>}
+                        {linkCopied && <p className="text-green-600 font-normal text-center">Link copiado com sucesso!</p>}
                         <p className="text-zinc-500 text-center mt-auto underline">PS: O link é utilizado para todos os times e projetos, mas depois é possivel escolher o time responsavel</p>
                         <div className="modal-action flex justify-center">
                             <form method="dialog">

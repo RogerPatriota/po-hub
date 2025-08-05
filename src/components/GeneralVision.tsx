@@ -7,11 +7,14 @@ import { format, parse } from 'date-fns';
 
 import '@/styles/calendar.css';
 import DataCard from '@/components/DataCard';
+import { useWorkItem } from '@/services/azure/use-work-item';
 
 function GeneralVision() {
   const [date, setDate] = useState<DateRange | undefined>();
   const [dateInput, setDateInput] = useState<string>('');
   const [quarter, setQuarter] = useState<string>('');
+
+  const { data } = useWorkItem('Data Automation')
 
   const dataQuarter = {
     Q1: '01/04/2025 - 30/06/2025',
@@ -50,7 +53,7 @@ function GeneralVision() {
     <div>
 
       <div className='mb-5 flex justify-end join '>
-          <button popoverTarget="rdp-popover" className="btn font-semibold rounded-l border-y border-l border-gray-300" style={{ anchorName: "--rdp" } as React.CSSProperties}>
+          <button popoverTarget="rdp-popover" className="btn font-normal rounded-l border-y border-l border-gray-300" style={{ anchorName: "--rdp" } as React.CSSProperties}>
             <Calendar size={20} strokeWidth={1}/>
             {date ? dateInput : "Pick a date"}
           </button>
@@ -59,7 +62,7 @@ function GeneralVision() {
         </div>
 
         <div className="dropdown dropdown-center">
-          <div tabIndex={0} role="button" className="btn font-semibold rounded-r border-y border-r border-gray-300">
+          <div tabIndex={0} role="button" className="btn font-normal rounded-r border-y border-r border-gray-300">
             <ChevronDown size={20} strokeWidth={1}/>
             {quarter ? quarter : "Quarter"}
           </div>
@@ -81,6 +84,10 @@ function GeneralVision() {
             <DataCard title="Em desenvolvimento" value="2" icon={<Clock3 size={20} color='blue' />} color="text-blue-600" />
             <DataCard title="Backlog" value="2" icon={<CircleAlert size={20} />} />
       </div>
+
+      {data?.map((p: {id: string}) => {
+        return <p>{p.id}</p>
+      })}
     </div>
   );
 }
