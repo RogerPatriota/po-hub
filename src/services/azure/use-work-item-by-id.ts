@@ -4,7 +4,7 @@ const username = 'roger.santos@global.ntt'
 const password = ''
 const credential = btoa(username + ':' + password)
 
-export function useWorkItemById(ids: []) {
+export function useWorkItemById(ids: [], project: string) {
     const query = {
         query: `SELECT [System.Id], [System.State] FROM WorkItems WHERE [System.TeamProject] = '${project}' and [System.WorkItemType] = 'Product Design'`
     }
