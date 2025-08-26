@@ -1,93 +1,126 @@
 # PO Hub
 
-A monorepo project featuring a **NestJS** backend and a **Next.js** frontend.  
-PO Hub is designed to streamline project management and collaboration.
+## Objetivo
+
+O PO Hub é uma plataforma para Product Owners gerenciarem demandas, projetos e roadmaps de forma centralizada. O sistema permite visualizar o status das demandas, acompanhar o progresso dos times e facilitar o registro de novos projetos, integrando-se ao Azure DevOps para consulta de work items.
+
+## Funcionalidades
+
+- Visualização geral das demandas por time
+- Filtros por data e trimestre
+- Registro de novas demandas via formulário externo (Microsoft Forms) ou preenchimento manual
+- Dashboard com cards de status (total, concluídas, em desenvolvimento, backlog)
+- Seleção de time e alternância de tema (claro/escuro)
+- Integração com Azure DevOps para consulta de work items
 
 ---
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 po-hub/
-  backend/   # NestJS API server
-  frontend/  # Next.js web application
+  backend/   # Servidor API NestJS
+  frontend/  # Aplicação web Next.js
 ```
 
 ---
 
-## Getting Started
+## Primeiros Passos
 
-### Prerequisites
+### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (v16+ recommended)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- (Optional) [Nest CLI](https://docs.nestjs.com/cli/overview) for backend development
+- [Node.js](https://nodejs.org/) (recomendado v16+)
+- [npm](https://www.npmjs.com/) (já vem com o Node.js)
+- (Opcional) [Nest CLI](https://docs.nestjs.com/cli/overview) para desenvolvimento backend
 
 ---
 
-### Backend Setup (NestJS)
+### Backend (NestJS)
 
-1. Navigate to the backend directory:
+1. Acesse o diretório do backend:
     ```bash
     cd backend
     ```
 
-2. Install dependencies:
+2. Instale as dependências:
     ```bash
-    npm install or npm i
+    npm install ou npm i
     ```
 
-3. Start the development server:
+3. Inicie o servidor de desenvolvimento:
     ```bash
     npm run start:dev
     ```
 
-4. The backend server will run on [http://localhost:8080](http://localhost:8080) by default.
+4. O backend estará disponível em [http://localhost:8080](http://localhost:8080) por padrão.
 
 ---
 
-### Frontend Setup (Next.js)
+### Frontend (Next.js)
 
-1. Navigate to the frontend directory:
+1. Acesse o diretório do frontend:
     ```bash
     cd frontend
     ```
 
-2. Install dependencies:
+2. Instale as dependências:
     ```bash
     npm install
     ```
 
-3. Start the development server:
+3. Inicie o servidor de desenvolvimento:
     ```bash
     npm run dev
     ```
 
-4. The frontend app will run on [http://localhost:3000](http://localhost:3000) by default.
+4. O frontend estará disponível em [http://localhost:3000](http://localhost:3000) por padrão.
 
 ---
 
 ## Scripts
 
-Each package (`backend` and `frontend`) contains its own scripts.  
-Run all commands from within the respective directory.
+Cada pacote (`backend` e `frontend`) possui seus próprios scripts.  
+Execute os comandos dentro do respectivo diretório.
 
 - **Backend**
-  - `npm run start:dev` — Start NestJS in development mode
-  - `npm run build` — Build the backend
+  - `npm run start:dev` — Inicia o NestJS em modo desenvolvimento
+  - `npm run build` — Compila o backend
 
 - **Frontend**
-  - `npm run dev` — Start Next.js in development mode
-  - `npm run build` — Build the frontend
+  - `npm run dev` — Inicia o Next.js em modo desenvolvimento
+  - `npm run build` — Compila o frontend
 
 ---
 
-## Folder Overview
+## Visão Geral das Pastas
 
 - **backend/**
-  - `src/` — NestJS source code (modules, controllers, DTOs, schemas)
-  - `test/` — Test configuration and files
+  - `src/` — Código-fonte do NestJS (módulos, controllers, DTOs, schemas)
+  - `test/` — Configuração e arquivos de teste
 
 - **frontend/**
-  - `src/` — Next.js source code (pages, components, services, styles)
-  - `public/` — Static assets
+  - `src/` — Código-fonte do Next.js (páginas, componentes, serviços, estilos)
+  - `public/` — Arquivos estáticos
+
+---
+
+## Contribuindo
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/SuaFeature`)
+3. Faça commit das suas alterações (`git commit -am 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/SuaFeature`)
+5. Abra um pull request
+
+---
+
+## Licença
+
+[MIT](LICENSE)  
+(Ou especifique sua licença aqui)
+
+---
+
+## Contato
+
+Para dúvidas ou suporte, abra uma issue ou entre em contato com o mantenedor.
